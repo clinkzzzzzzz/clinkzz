@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Калькулятор веса на планетах</title>
+  </head>
+  <body>
+    <h1>Калькулятор веса на планета</h1>
+    <form method="post">
+      <label for="weight_on_earth">Вес на земле (в кг):</label>
+      <input type="number" id="weight_on_earth" name="weight_on_earth" required>
+      <br>
+      <button type="submit">вычислить</button>
+    </form>
+    {% if results %}
+    <h2>Результаты:</h2>
+    <ul>
+      {% for planet, weight in results.items() %}
+      <li>{{ planet }}: {{ weight }} kg</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
